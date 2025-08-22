@@ -1,0 +1,1654 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo h1 {
+    font-size: 1.8rem;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+}
+
+.nav-logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-logo .logo-image {
+    height: 40px;
+    width: auto;
+    max-width: 200px;
+    object-fit: contain;
+    filter: invert(1);
+    vertical-align: middle;
+    margin-top: 5px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #8B4513;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+    height: 60vh;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: black;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-logo {
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-logo-image {
+    height: 120px;
+    width: auto;
+    max-width: 500px;
+    object-fit: contain;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease 0.6s both;
+}
+
+/* Collections Grid */
+.collections {
+    padding: 5rem 0;
+    background: #f8f8f8;
+}
+
+.collections-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.collection-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover {
+    transform: translateY(-10px);
+}
+
+.collection-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.collection-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.collection-item:hover .collection-image img {
+    transform: scale(1.1);
+}
+
+.collection-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.collection-item:hover .collection-overlay {
+    opacity: 1;
+}
+
+.collection-overlay h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.collection-link {
+    color: white;
+    text-decoration: none;
+    border: 2px solid white;
+    padding: 0.6rem 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.collection-link:hover {
+    background: white;
+    color: #333;
+}
+
+/* Featured Collections */
+.featured-collections {
+    padding: 5rem 0;
+}
+
+.featured-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5rem;
+    gap: 4rem;
+}
+
+.featured-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.featured-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.featured-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #2c2c2c;
+    letter-spacing: 2px;
+}
+
+.cocktail-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 2.5rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.occasion-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 2.5rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.about-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 3rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.contact-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 3rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.contact-info-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.5rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.collection-overlay-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 2rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.collections-page-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 1.8rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.about-page-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 2.5rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+}
+
+.featured-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.btn-explore {
+    display: inline-block;
+    background: #8B4513;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.btn-explore:hover {
+    background: #A0522D;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.featured-image {
+    flex: 1;
+    height: 700px;
+}
+
+.featured-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* About Section */
+.about {
+    background: #f8f8f8;
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #666;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: #8B4513;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #A0522D;
+}
+
+/* Footer */
+.footer {
+    background: #2c2c2c;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Page Headers */
+.page-header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/page-header-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 8rem 0 4rem;
+    margin-top: 80px;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.bridal-header {
+    background: linear-gradient(rgba(139, 69, 19, 0.7), rgba(139, 69, 19, 0.7)), 
+                url('../images/bridal-header-bg.jpg') center/cover no-repeat;
+}
+
+/* Collections Page */
+.collections-page {
+    padding: 3rem 0 5rem 0;
+    margin-top: 80px;
+    min-height: calc(100vh - 160px);
+}
+
+.collections-grid-large {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+}
+
+.collection-card {
+    position: relative;
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    background: white;
+}
+
+.collection-card:hover {
+    transform: translateY(-10px);
+}
+
+.collection-image-large {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.collection-image-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover .collection-image-large img {
+    transform: scale(1.05);
+}
+
+.collection-overlay-large {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 3rem 2rem 2rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover .collection-overlay-large {
+    transform: translateY(0);
+}
+
+.collection-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #2c2c2c;
+}
+
+.collection-content {
+    padding: 2rem;
+    text-align: center;
+}
+
+.collection-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    color: #666;
+}
+
+.btn-collection {
+    display: inline-block;
+    background: #2c2c2c;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 2px solid #2c2c2c;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-collection:hover {
+    background: #333;
+    border-color: #333;
+    transform: translateY(-2px);
+}
+
+/* About Page */
+.about-page {
+    padding: 3rem 0;
+    margin-top: 80px;
+}
+
+.about-hero {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.about-image {
+    flex: 1;
+    height: auto;
+    min-height: 400px;
+    max-height: 600px;
+    margin-bottom: 2rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    aspect-ratio: auto;
+}
+
+.about-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.experience-section {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    flex-direction: row-reverse;
+}
+
+.experience-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.experience-image {
+    flex: 1;
+    height: 400px;
+}
+
+.experience-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.brand-story {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.story-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.story-image {
+    flex: 1;
+    height: 350px;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.ethiopian-quote {
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    border-left: 4px solid #8B4513;
+}
+
+.amharic-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #2c2c2c;
+    margin-bottom: 0.5rem;
+}
+
+.translation {
+    font-style: italic;
+    color: #666;
+}
+
+.values-section {
+    text-align: center;
+}
+
+.values-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.value-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+/* Video Section */
+.video-section {
+    padding: 5rem 0;
+    background: #f8f8f8;
+    text-align: center;
+}
+
+.video-title {
+    font-family: 'Lato', sans-serif !important;
+    font-size: 2.5rem !important;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.video-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (9/16 = 0.5625) */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* Contact Page */
+.contact-page {
+    padding: 3rem 0;
+    margin-top: 80px;
+}
+
+.contact-hero {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.contact-image {
+    flex: 1;
+    height: 400px;
+}
+
+.contact-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.shop-info {
+    flex: 1;
+    padding: 2rem;
+}
+
+.shop-info h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.address h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.address p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+.contact-details {
+    margin-bottom: 5rem;
+}
+
+.contact-locations {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.location {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.location h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #8B4513;
+    text-align: center;
+}
+
+.contact-info p {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: #8B4513;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.additional-contact {
+    text-align: center;
+    background: #f8f8f8;
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.social-contact {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.social-contact a {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 2px solid #8B4513;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.social-contact a:hover {
+    background: #8B4513;
+    color: white;
+}
+
+/* Contact Form */
+.contact-form-section {
+    text-align: center;
+}
+
+.contact-form-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c2c2c;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #8B4513;
+}
+
+.btn-submit {
+    background: #8B4513;
+    color: white;
+    padding: 1rem 3rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background: #A0522D;
+    transform: translateY(-2px);
+}
+
+/* Lookbook Page */
+.lookbook {
+    padding: 3rem 0;
+    margin-top: 80px;
+}
+
+.lookbook-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.lookbook-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.lookbook-item:hover {
+    transform: translateY(-5px);
+}
+
+.lookbook-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.lookbook-item:hover img {
+    transform: scale(1.1);
+}
+
+.lookbook-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.lookbook-item:hover .lookbook-overlay {
+    transform: translateY(0);
+}
+
+.lookbook-overlay h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.load-more {
+    text-align: center;
+}
+
+.btn-load-more {
+    background: transparent;
+    color: #8B4513;
+    border: 2px solid #8B4513;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-load-more:hover {
+    background: #8B4513;
+    color: white;
+}
+
+/* Collection Gallery Pages */
+.collection-gallery {
+    padding: 3rem 0;
+}
+
+.collection-intro {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.collection-intro h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #2c2c2c;
+}
+
+.collection-intro p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.gallery-item {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 2rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .item-overlay {
+    transform: translateY(0);
+}
+
+.item-overlay h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.item-overlay p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Collection Features */
+.collection-features {
+    background: #f8f8f8;
+    padding: 4rem 0;
+    margin: 4rem 0;
+    border-radius: 12px;
+}
+
+.collection-features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.feature p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Collection Navigation */
+.collection-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+}
+
+.nav-link {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #8B4513;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background: #8B4513;
+    color: white;
+}
+
+/* Bridal Specific Styles */
+.bridal-gallery {
+    background: linear-gradient(to bottom, #fefefe, #f8f8f8);
+}
+
+.bridal-hero {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.bridal-main-image {
+    flex: 1;
+    height: 600px;
+}
+
+.bridal-main-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.bridal-details {
+    flex: 1;
+    padding: 2rem;
+}
+
+.bridal-details h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #8B4513;
+}
+
+.dress-features {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.dress-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.dress-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.bridal-grid .gallery-item.bridal-large {
+    grid-column: span 2;
+    height: 500px;
+}
+
+.bridal-services {
+    background: white;
+    padding: 4rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.bridal-services h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #8B4513;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service {
+    text-align: center;
+    padding: 2rem;
+    border: 2px solid #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.service:hover {
+    border-color: #8B4513;
+    transform: translateY(-5px);
+}
+
+.service h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.bridal-story {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin: 5rem 0;
+    background: #f8f8f8;
+    padding: 3rem;
+    border-radius: 12px;
+}
+
+.bridal-contact {
+    background: #8B4513;
+    color: white;
+    padding: 4rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.bridal-contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.bridal-contact p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.bridal-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.btn-bridal {
+    background: white;
+    color: #8B4513;
+    padding: 1rem 3rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.btn-bridal:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+.bridal-cta .contact-info {
+    display: flex;
+    gap: 2rem;
+}
+
+.bridal-cta .contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.bridal-cta .contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Occasion Specific Styles */
+.occasions-guide {
+    background: white;
+    padding: 4rem;
+    border-radius: 12px;
+    margin: 4rem 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.occasions-guide h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #2c2c2c;
+}
+
+.occasions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.occasion-type {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f8f8;
+    border-radius: 8px;
+}
+
+.occasion-type h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: #8B4513;
+}
+
+.occasion-type p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .collections-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-logo-image {
+        height: 80px;
+        max-width: 300px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .collections-grid-large {
+        grid-template-columns: 1fr;
+    }
+
+    .collection-card {
+        height: 500px;
+    }
+
+    .featured-item,
+    .featured-item.reverse {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .featured-content {
+        padding: 1rem;
+    }
+
+    .featured-content h2 {
+        font-size: 2rem;
+    }
+
+    .featured-image {
+        height: 300px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .about h2,
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .about-hero,
+    .experience-section,
+    .brand-story,
+    .contact-hero,
+    .bridal-hero,
+    .bridal-story {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .about-image,
+    .experience-image,
+    .story-image,
+    .contact-image,
+    .bridal-main-image {
+        height: 300px;
+    }
+
+    .about-content,
+    .experience-content,
+    .story-content,
+    .shop-info,
+    .bridal-details {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .contact-locations {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .social-contact {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .lookbook-grid,
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .lookbook-item,
+    .gallery-item {
+        height: 400px;
+    }
+
+    .collection-navigation {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .bridal-grid .gallery-item.bridal-large {
+        grid-column: span 1;
+    }
+
+    .bridal-services,
+    .collection-features,
+    .occasions-guide {
+        padding: 2rem;
+    }
+
+    .bridal-cta .contact-info {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .values-grid,
+    .features-grid,
+    .services-grid,
+    .occasions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .video-container {
+        max-width: 100%;
+        margin: 0 1rem;
+    }
+
+    .video-title {
+        font-size: 2rem !important;
+    }
+
+    .video-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-logo-image {
+        height: 60px;
+        max-width: 250px;
+    }
+
+    .nav-logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .nav-logo .logo-image {
+        height: 35px;
+        max-width: 150px;
+    }
+
+    .collection-item,
+    .lookbook-item,
+    .gallery-item {
+        height: 300px;
+    }
+
+    .featured-content h2,
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .collection-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .bridal-details h3 {
+        font-size: 1.8rem;
+    }
+
+    .lookbook-grid,
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
