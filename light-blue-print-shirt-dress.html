@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Blue Print Shirt Dress - D London</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;500;700&display=swap" rel="stylesheet">    <style>
+        /* Custom styling for this page - white background with black text for hero section */
+        .product-header {
+            background: white !important;
+            color: black !important;
+            padding: 2rem 0 3rem !important;
+        }
+        .product-title {
+            color: black !important;
+            font-family: 'Lato', sans-serif !important;
+            letter-spacing: 2px !important;
+            font-weight: normal !important;
+        }
+        .breadcrumb {
+            color: black !important;
+        }
+        .breadcrumb a {
+            color: #8B4513 !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="D-London White_text.webp" alt="D London" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="lookbook.html">Lookbook</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Header -->
+    <section class="product-header">
+        <div class="container">
+            <h1 class="product-title">Light Blue Print Shirt Dress</h1>
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a> / 
+                <a href="lookbook.html">Lookbook</a> / 
+                <span>Light Blue Print Shirt Dress</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="product-gallery">
+        <div class="container">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="images/Product/light-blue-print-shirt-dress/light-blue-print-shirt-dress-1.jpg" alt="light-blue-print-shirt-dress - View 1">
+                </div>                <div class="slide">
+                    <img src="images/Product/light-blue-print-shirt-dress/light-blue-print-shirt-dress-2.jpg" alt="light-blue-print-shirt-dress - View 2">
+                </div>                <div class="slide">
+                    <img src="images/Product/light-blue-print-shirt-dress/light-blue-print-shirt-dress-3.jpg" alt="light-blue-print-shirt-dress - View 3">
+                </div>                <div class="slide">
+                    <img src="images/Product/light-blue-print-shirt-dress/light-blue-print-shirt-dress-4.jpg" alt="light-blue-print-shirt-dress - View 4">
+                </div>                <div class="slide">
+                    <img src="images/Product/light-blue-print-shirt-dress/light-blue-print-shirt-dress-5.jpg" alt="light-blue-print-shirt-dress - View 5">
+                </div>
+                
+                <!-- Navigation arrows -->
+                <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+                
+                <!-- Slide indicators -->
+                <div class="slide-indicators">
+                    <span class="indicator active" onclick="currentSlide(1)"></span>                    <span class="indicator" onclick="currentSlide(2)"></span>                    <span class="indicator" onclick="currentSlide(3)"></span>                    <span class="indicator" onclick="currentSlide(4)"></span>                    <span class="indicator" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="container">
+            <h2>You May Also Like</h2>
+            <div class="related-grid">
+                <a href="bandeau-bridal-dress.html" class="related-item">
+                    <img src="images/Lookbook/Bandeau Bridal dress.webp" alt="Bandeau Bridal dress">
+                    <h3>Bandeau Bridal Dress</h3>
+                </a>
+                <a href="off-shoulder-lace-wine-red.html" class="related-item">
+                    <img src="images/Lookbook/Wine off shoulder lace mini dress.webp" alt="Wine off shoulder lace mini dress">
+                    <h3>Wine Off Shoulder Lace Mini Dress</h3>
+                </a>
+                <a href="cocktail-dress-blue.html" class="related-item">
+                    <img src="images/Lookbook/Blue Cocktail Dress.webp" alt="Blue Cocktail Dress">
+                    <h3>Blue Cocktail Dress</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 D London</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Slideshow functionality
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const indicators = document.querySelectorAll('.indicator');
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            slideIndex = (index + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+            indicators[slideIndex].classList.add('active');
+        }
+
+        function changeSlide(direction) {
+            showSlide(slideIndex + direction);
+        }
+
+        function currentSlide(index) {
+            showSlide(index - 1);
+        }
+
+        // Auto-play slideshow
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+</body>
+</html>
+

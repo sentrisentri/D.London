@@ -800,13 +800,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .shop-info h2 {
+    font-family: 'Lato', sans-serif !important;
     font-size: 2.5rem;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
     margin-bottom: 2rem;
     color: #2c2c2c;
 }
 
 .address h3 {
+    font-family: 'Lato', sans-serif !important;
     font-size: 1.5rem;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
     margin-bottom: 1rem;
     color: #8B4513;
 }
@@ -836,7 +842,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .location h3 {
+    font-family: 'Lato', sans-serif !important;
     font-size: 1.5rem;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
     margin-bottom: 1.5rem;
     color: #8B4513;
     text-align: center;
@@ -891,7 +900,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .contact-form-section h2 {
+    font-family: 'Lato', sans-serif !important;
     font-size: 2.5rem;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
     margin-bottom: 1rem;
     color: #2c2c2c;
 }
@@ -975,10 +987,19 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .lookbook-item:hover {
     transform: translateY(-5px);
+}
+
+.lookbook-item:visited,
+.lookbook-item:link {
+    color: inherit;
+    text-decoration: none;
 }
 
 .lookbook-item img {
@@ -1009,7 +1030,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .lookbook-overlay h3 {
+    font-family: 'Lato', sans-serif !important;
     font-size: 1.2rem;
+    letter-spacing: 2px !important;
+    font-weight: normal !important;
     margin-bottom: 0.5rem;
 }
 
@@ -1152,11 +1176,6 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #8B4513;
-}
-
-.feature p {
-    color: #666;
-    line-height: 1.6;
 }
 
 /* Collection Navigation */
@@ -1407,6 +1426,257 @@ h1, h2, h3, h4, h5, h6 {
     }
 }
 
+/* Product Page Styles */
+.product-header {
+    background: linear-gradient(135deg, #8B4513 0%, #A0522D 100%);
+    color: white;
+    padding: 6rem 0 3rem;
+    margin-top: 80px;
+}
+
+.product-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.breadcrumb {
+    text-align: center;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    opacity: 0.7;
+}
+
+/* Product Gallery */
+.product-gallery {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    aspect-ratio: 3/4; /* 3:4 ratio for portrait orientation */
+}
+
+.slide {
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide.active {
+    display: block;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain to show full image */
+    background: white;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    z-index: 10;
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.slide-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.indicator.active {
+    background: white;
+}
+
+/* Product Details */
+.product-details {
+    padding: 4rem 0;
+}
+
+.product-info {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.product-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #8B4513;
+    margin-bottom: 2rem;
+}
+
+.product-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.product-features {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+}
+
+.product-features h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+.product-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-features li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.product-features li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #8B4513;
+    font-weight: bold;
+}
+
+.contact-info h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5rem;
+    color: #8B4513;
+    margin-bottom: 1rem;
+}
+
+.contact-info p {
+    margin-bottom: 2rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: #8B4513;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #A0522D;
+}
+
+/* Related Products */
+.related-products {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+.related-products h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #8B4513;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.related-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.related-item:hover {
+    transform: translateY(-5px);
+}
+
+.related-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.related-item h3 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    padding: 1rem;
+    text-align: center;
+    color: #333;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .collections-grid {
@@ -1607,6 +1877,25 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1rem;
         margin-bottom: 2rem;
     }
+
+    /* Responsive slideshow adjustments */
+    .slideshow-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .prev-btn, .next-btn {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
+    }
+
+    .prev-btn {
+        left: 10px;
+    }
+
+    .next-btn {
+        right: 10px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1650,5 +1939,33 @@ h1, h2, h3, h4, h5, h6 {
     .lookbook-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile slideshow adjustments */
+    .slideshow-container {
+        max-width: 95%;
+        border-radius: 8px;
+    }
+
+    .prev-btn, .next-btn {
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .prev-btn {
+        left: 5px;
+    }
+
+    .next-btn {
+        right: 5px;
+    }
+
+    .slide-indicators {
+        bottom: 15px;
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
     }
 }
